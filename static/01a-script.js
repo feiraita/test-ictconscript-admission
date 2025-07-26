@@ -16,7 +16,7 @@ function getJson(url) {
 const showLogBook = () => {
   const listGroup = document.getElementById('entriesList');
   listGroup.innerHTML = '';
-  const entries = [...allEntries];
+  const entries = [...allEntries].sort((a, b) => new Date(b.isoTime) - new Date(a.isoTime));;
 
   entries.forEach((entry) => {
     const field = createEntry(entry);
