@@ -1,5 +1,5 @@
 // Haetaan JSON
-var url = getJson('../../sample-data/data.json');
+var url = getJson('data.json');
 
 function getJson(url) {
   return JSON.parse($.ajax({
@@ -25,8 +25,7 @@ const createEntry = ({ title, body, isoTime, lat, lon }, i) => {
         <small>${isoTime}</small>
         </div>
         <p class="mb-1">${body}</p>
-        <small>Coordinates: ${lat}, ${lon}</small>
-    `;
+        <small>Coordinates: ${lat}, ${lon}</small>`;
     return field;
 }
 
