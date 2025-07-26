@@ -16,7 +16,7 @@ function getJson(url) {
 const showLogBook = () => {
   const listGroup = document.getElementById('entriesList');
   listGroup.innerHTML = '';
-  const entries = [...allEntries].reverse();
+  const entries = [...allEntries];
 
   entries.forEach((entry) => {
     const field = createEntry(entry);
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const newId = maxId + 1;
 
     const newEntry = { id: newId, title, body, isoTime, lat, lon };
-    allEntries.push(newEntry);
+    allEntries.unshift(newEntry);
     showLogBook();
 
     document.getElementById('entryForm').reset();
