@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const newId = maxId + 1;
 
     const newEntry = { id: newId, title, body, isoTime, lat, lon };
-    allEntries.unshift(newEntry);
+    allEntries.push(newEntry);
     showLogBook();
 
     document.getElementById('entryForm').reset();
