@@ -18,18 +18,18 @@ const renderLogBook = () => {
   listGroup.innerHTML = '';
   const entries = [...allEntries].reverse();
 
-  entries.forEach((entry, i) => {
-    const field = createEntry(entry, i + 1);
+  entries.forEach((entry) => {
+    const field = createEntry(entry);
     listGroup.appendChild(field);
   });
 };
 
-const createEntry = ({ title, body, isoTime, lat, lon }, i) => {
+const createEntry = ({ id, title, body, isoTime, lat, lon }) => {
     const field = document.createElement('li');
     field.classList.add('list-group-item', 'mb-3', 'rounded');
     field.innerHTML = `
         <div class="d-flex w-100 justify-content-between">
-        <h5 class="mb-1">Entry ${i}: ${title}</h5>
+        <h5 class="mb-1">Entry ${id}: ${title}</h5>
         <small class="text-muted">${isoTime}</small>
         </div>
         <p class="mb-1">${body}</p>
