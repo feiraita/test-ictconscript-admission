@@ -2,6 +2,11 @@
     max-width: 50%;
 }
 
-.container{
-    background-color: aqua;
+body {
+    background-color: #2C2E31;
+}
+
+.btn {
+    background-color: #9BAA61;
+    border: none;
 }
