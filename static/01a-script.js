@@ -1,5 +1,5 @@
 // Haetaan JSON
-var url = getJson('data.json');
+var url = getJson('../sample-data/data.json');
 
 function getJson(url) {
   return JSON.parse($.ajax({
