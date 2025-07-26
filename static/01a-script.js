@@ -26,21 +26,24 @@ const renderLogBook = () => {
 
 const createEntry = ({ title, body, isoTime, lat, lon }, i) => {
     const field = document.createElement('li');
-    field.classList.add('list-group-item', 'flex-column', 'align-items-start', 'mb-3');
+    field.classList.add('list-group-item', 'mb-3', 'rounded');
     field.innerHTML = `
         <div class="d-flex w-100 justify-content-between">
         <h5 class="mb-1">Entry ${i}: ${title}</h5>
-        <small>${isoTime}</small>
+        <small class="text-muted">${isoTime}</small>
         </div>
         <p class="mb-1">${body}</p>
-        <small>Coordinates: ${lat}, ${lon}</small>`;
+        <small class="text-muted">Coordinates: ${lat}, ${lon}</small>`;
     return field;
 };
-
 document.addEventListener('DOMContentLoaded', () => {
   renderLogBook();
 
-  document.querySelector('.btn-primary').addEventListener('click', () => {
+  const saveBtn = document.getElementById('saveEntry');
+
+  saveBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+
     const title = document.getElementById('entryTitle').value.trim();
     const body = document.getElementById('entryBody').value.trim();
     const lat = document.getElementById('entryLat').value.trim();
@@ -52,15 +55,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const isoTime = new Date().toISOString();
-
     const newEntry = { title, body, isoTime, lat, lon };
     allEntries.push(newEntry);
     renderLogBook();
 
-    document.getElementById('entryTitle').value = '';
-    document.getElementById('entryBody').value = '';
-    document.getElementById('entryLat').value = '';
-    document.getElementById('entryLon').value = '';
+    document.getElementById('entryForm').reset();
 
     const modal = bootstrap.Modal.getInstance(document.getElementById('logModal'));
     modal.hide();
