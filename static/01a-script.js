@@ -47,8 +47,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const title = document.getElementById('entryTitle').value.trim();
     const body = document.getElementById('entryBody').value.trim();
-    const lat = document.getElementById('entryLat').value.trim();
-    const lon = document.getElementById('entryLon').value.trim();
+    const lat = document.getElementById('entryLat').value.trim() || null;
+    const lon = document.getElementById('entryLon').value.trim() || null;
 
     if (!title || !body) {
       alert("Title and Report are required.");
