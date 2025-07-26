@@ -9,33 +9,33 @@
 </head>
 <body>
     <div class="container py-3">
-        <div class="content mx-auto">
-            <div class="d-flex justify-content-between align-items-center mb-3">
-                <h4 class="mb-0">Log Entries</h4>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#logModal">
-                    New entry
-                </button>
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6">
+                <div class="content">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="mb-0">Log Entries</h4>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#logModal">New entry</button>
+                </div>
+                <ul class="list-group" id="entriesList"></ul>
             </div>
-
-            <ul class="list-group" id="entriesList"></ul>
         </div>
     </div>
 
-        <div class="modal fade" id="logModal" tabindex="-1" aria-labelledby="logModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="logModalLabel">New entry</h5>
+    <div class="modal fade" id="logModal" tabindex="-1" aria-labelledby="logModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="logModalLabel">New entry</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group mb-2">
+                        <label for="entryTitle">Title:</label>
+                        <input type="text" class="form-control" id="entryTitle" placeholder="Night perimeter check">
                     </div>
-                    <div class="modal-body">
-                        <div class="form-group mb-2">
-                            <label for="entryTitle">Title:</label>
-                            <input type="text" class="form-control" id="entryTitle" placeholder="Night perimeter check">
-                        </div>
-                        <div class="form-group mb-2">
-                            <label for="entryBody">Report:</label>
-                            <textarea class="form-control" id="entryBody" rows="2"></textarea>
-                        </div>
+                    <div class="form-group mb-2">
+                        <label for="entryBody">Report:</label>
+                        <textarea class="form-control" id="entryBody" rows="2"></textarea>
+                    </div>
 
                     <div class="row">
                         <div class="col">
