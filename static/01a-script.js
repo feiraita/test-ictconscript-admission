@@ -1,5 +1,6 @@
 // Haetaan JSON
 var url = getJson('./sample-data/data.json');
+console.log("js toimii");
 
 function getJson(url) {
   return JSON.parse($.ajax({
